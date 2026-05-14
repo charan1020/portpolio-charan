@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charan | AI Developer</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background:
+        linear-gradient(rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+        linear-gradient(135deg, #050816 0%, #0b1220 42%, #111827 100%);
+    background-size: 48px 48px, 48px 48px, cover;
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        linear-gradient(115deg, rgba(56, 189, 248, 0.18), transparent 26%),
+        linear-gradient(245deg, rgba(45, 212, 191, 0.12), transparent 28%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(2, 6, 23, 0.72) 100%);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    padding: 90px 20px 70px;
+    position: relative;
+}
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(56, 189, 248, 0.9);
+    box-shadow: 0 0 0 10px rgba(56, 189, 248, 0.08), 0 24px 60px rgba(2, 8, 23, 0.65);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: clamp(34px, 6vw, 52px);
+    margin-bottom: 10px;
+    letter-spacing: 0;
+}
+
+header p {
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+.contact-info {
+    color: #cbd5e1;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+.contact-info a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+section > p,
+.project,
+.certification-card {
+    backdrop-filter: blur(18px);
+}
+
+h2 {
+    color: #7dd3fc;
+    margin-bottom: 20px;
+    text-shadow: 0 0 24px rgba(56, 189, 248, 0.24);
+}
+
+.project {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.84), rgba(15, 23, 42, 0.54));
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 24px 70px rgba(2, 6, 23, 0.46);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.03);
+}
+
+.tech {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.certification-category {
+    margin-bottom: 34px;
+}
+
+.certification-category h3 {
+    color: #e2e8f0;
+    margin: 0 0 16px;
+}
+
+.certification-card {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.5));
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 18px 54px rgba(2, 6, 23, 0.38);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.certification-card:hover {
+    transform: scale(1.03);
+}
+
+.certification-card img,
+.certification-card iframe {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    border: 0;
+    background: #e2e8f0;
+}
+
+.certification-card div {
+    padding: 16px;
+}
+
+.certification-card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.certification-card p {
+    color: #94a3b8;
+    margin: 0 0 14px;
+    font-size: 14px;
+}
+
+.certification-card a {
+    color: #38bdf8;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+button {
+    background: linear-gradient(135deg, #38bdf8, #2dd4bf);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #03111f;
+    font-weight: 700;
+    box-shadow: 0 12px 30px rgba(45, 212, 191, 0.24);
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 36px rgba(56, 189, 248, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="charanpic.jpg" alt="Profile photo" class="profile-photo">
+    <h1> Chennama Charan Kesava Reddy</h1>
+    <p>AI & Full Stack Developer | Python | Machine Learning</p>
+    <div class="contact-info">
+        <span>Email: <a href="mailto:charankesavareddy@gmail.com">charankesavareddy@gmail.com</a></span><br>
+        <span>Phone: <a href="tel:8328691020">832-869-1020</a></span><br>
+        <span><a href="https://www.linkedin.com/in/charan-kesava-reddy-chennama-420b89241/" target="_blank">LinkedIn</a> | <a href="https://github.com/charan1020" target="_blank">GitHub</a></span>
+    </div>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>
+    Computer Science graduate specialized in Artificial Intelligence and Machine Learning, with strong knowledge of
+    Python, SQL, data structures, machine learning, and data analysis. I have built practical projects such as an
+    AI Sign Language Translator and a Nutrition Recommendation System, applying computer vision, predictive modeling,
+    and full-stack development concepts. My focus is on building practical, user-focused technology solutions while
+    continuing to grow in software development, AI/ML, and data-driven problem solving.
+    </p>
+</section>
+
+<section>
+    <h2>Education</h2>
+    <p>BTech | CSE | AIML | CGPA - 8.44<br>(Kalasalingam Academy of Research and Education, India) May 2025</p>
+    <p>Intermediate | 86%<br>(Narayana Junior College, Tirupathi, India) March 2021</p>
+    <p>SSC | CGPA - 9.8<br>(Sri Chaitanya Techno School, Dharmavaram, India) April 2019</p>
+</section>
+
+<section>
+    <h2>Technical Skills</h2>
+    <p>Business Analytics &amp; BI: Data Visualization, Excel</p>
+    <p>Databases &amp; Querying: SQL, SQL Server, MySQL</p>
+    <p>Statistics &amp; Machine Learning: Regression, Classification, Clustering, Recommendation Systems, NLP, Predictive Analysis, NumPy, Pandas</p>
+    <p>Programming Languages: Python</p>
+</section>
+
+<section>
+    <h2>Projects</h2>
+
+    <div class="project">
+        <img src="sign language paper publish.jpeg" alt="Sign Language Project" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        
+        <h3>AI Sign Language Translator</h3>
+        <p>
+        Real-time system converting gestures into text and speech using computer vision and deep learning.
+        </p>
+        <p class="tech">Python | OpenCV | TensorFlow | MediaPipe</p>
+
+        <button onclick="window.open('https://github.com/charan1020/Audio_Sign_Conversion_Project-20251012T060812Z-1-001')">GitHub</button>
+        <button onclick="window.open('https://github.com/charan1020/Audio_Sign_Conversion_Project-20251012T060812Z-1-001')">Project Demo</button>
+        <button onclick="window.open('sign language paper publish.jpeg')">Certificate</button>
+    </div>
+
+    <div class="project">
+        <img src="IBM ICE DAY.jpeg" alt="Nutrition Project" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        
+        <h3>Nutrition Recommendation System</h3>
+        <p>
+        ML-based system that generates personalized diet plans based on user health data.
+        </p>
+        <p class="tech">Python | Pandas | Scikit-learn | Flask</p>
+
+        <button onclick="window.open('https://github.com/charan1020/Nutrition-Recomendation-system-project')">GitHub</button>
+        <button onclick="window.open('https://nutrition-recomendation-system-a9af31.netlify.app/')">Live Demo</button>
+        <button onclick="window.open('IBM ICE DAY.jpeg')">Certificate</button>
+    </div>
+
+</section>
+
+<section>
+    <h2>Certifications</h2>
+
+    <div class="certification-category">
+        <h3>Education Certificates</h3>
+        <div class="certifications-grid">
+            <article class="certification-card">
+                <img src="AIML DIPLOMA CHENNAMA CHARAN KESAVA REDDY.jpg" alt="Advanced Diploma in AI and ML certificate">
+                <div>
+                    <h3>Advanced Diploma in AI/ML</h3>
+                    <p>WILA | 2025-2026</p>
+                    <a href="AIML DIPLOMA CHENNAMA CHARAN KESAVA REDDY.jpg" target="_blank">View certificate</a>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <img src="AI_Fundamentals_Certificate_High_Quality.png" alt="Artificial Intelligence Fundamentals certificate">
+                <div>
+                    <h3>Artificial Intelligence Fundamentals</h3>
+                    <p>IBM Developer Skills Network | 2026</p>
+                    <a href="AI_Fundamentals_Certificate_High_Quality.png" target="_blank">View certificate</a>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <iframe src="oracle-data-science-professional.pdf#toolbar=0&navpanes=0&page=1" title="Oracle Cloud Infrastructure Data Science Professional certificate preview"></iframe>
+                <div>
+                    <h3>Oracle Cloud Infrastructure Data Science Professional</h3>
+                    <p>Oracle | 2023</p>
+                    <a href="oracle-data-science-professional.pdf" target="_blank">View certificate</a>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <iframe src="kalasalingam-professional-certificate.pdf#toolbar=0&navpanes=0&page=1" title="Kalasalingam Academy professional certificate preview"></iframe>
+                <div>
+                    <h3>Kalasalingam Academy Professional Certificate</h3>
+                    <p>Kalasalingam Academy of Research and Education</p>
+                    <a href="kalasalingam-professional-certificate.pdf" target="_blank">View certificate</a>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <img src="enbott.jpeg" alt="Placement Skills Development Program certificate">
+                <div>
+                    <h3>Placement Skills Development Program</h3>
+                    <p>Enbott Technologies | 2024</p>
+                    <a href="enbott.jpeg" target="_blank">View certificate</a>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <img src="vintra.jpeg" alt="Vintra Event certificate">
+                <div>
+                    <h3>Vintra Event Project Development</h3>
+                    <p>Project development certificate</p>
+                    <a href="vintra.jpeg" target="_blank">View certificate</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="certification-category">
+        <h3>Extracurricular Activities</h3>
+        <div class="certifications-grid">
+            <article class="certification-card">
+                <img src="yoga.jpeg" alt="Yoga for Youth Empowerment certificate">
+                <div>
+                    <h3>Yoga for Youth Empowerment</h3>
+                    <p>Vethathiri Maharishi Institute | 2022</p>
+                    <a href="yoga.jpeg" target="_blank">View certificate</a>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <img src="youth red cross.jpeg" alt="Youth Red Cross participation certificate">
+                <div>
+                    <h3>Youth Red Cross Participation</h3>
+                    <p>Kalasalingam Academy of Research and Education | 2021</p>
+                    <a href="youth red cross.jpeg" target="_blank">View certificate</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="certification-category">
+        <h3>Language Certificates</h3>
+        <div class="certifications-grid">
+            <article class="certification-card">
+                <img src="language school.jpeg" alt="Language Proficiency certificate">
+                <div>
+                    <h3>Language Proficiency</h3>
+                    <p>Sri Chaitanya School | 2017-2018</p>
+                    <a href="language school.jpeg" target="_blank">View certificate</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <p>Python, Machine Learning, Data Structures, SQL, Flask, AI/ML</p>
+</section>
+
+<footer>
+    <p>&copy; 2026 Charan</p>
+</footer>
+
+</body>
+</html>
